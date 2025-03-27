@@ -2,12 +2,14 @@ import React from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
-export default function Card({ title, expiryDate }) {
+export default function Card({ title, expiryDate, imageUrl }) {
   return (
     <View style={styles.card}>
       {/* Left Icon */}
-      <View style={styles.iconContainer}>
-        <Ionicons name="happy-outline" size={24} color="white" />
+      <View style={styles.ImageContainer}>
+        <Image 
+        style={styles.Image}
+        source={{ uri: imageUrl }}/>
       </View>
 
       {/* Content */}
@@ -29,6 +31,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFFFFF',
     borderRadius: 10,
     padding: 10,
+    paddingRight: 20,
     marginVertical: 5,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
@@ -36,15 +39,16 @@ const styles = StyleSheet.create({
     shadowRadius: 4,
     elevation: 2, // For Android shadow
   },
-  iconContainer: {
-    width: 40,
-    height: 40,
-    borderRadius: 20,
-    backgroundColor: '#3B82F6', // Blue background
+  ImageContainer: {
     justifyContent: 'center',
     alignItems: 'center',
     marginRight: 10,
   },
+    Image: {
+        width: 75,
+        height: 75,
+        borderRadius: 5,
+    },
   content: {
     flex: 1,
   },
@@ -57,4 +61,4 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: '#6B7280', // Gray color
   },
-});
+}); 
