@@ -8,6 +8,8 @@ import Rating from '../components/Rating';
 function ProfileScreen({ navigation }) {
   return (
     <View style={styles.container}>
+      <TouchableOpacity onPress={() => navigation.navigate('Camera')}/>
+
       <View style={styles.profileContainer}>
         <Image
           source={{ uri: 'https://randomuser.me/api/portraits/women/2.jpg' }} 
@@ -20,7 +22,7 @@ function ProfileScreen({ navigation }) {
       <Text style={{ fontSize: 16, fontWeight: 'bold', marginBottom: 10 }}>My Food Posts</Text>
       <Card title="Banana" expiryDate="6/7/1928" imageUrl={'https://akamai.vgc.no/v2/images/e43f54e7-7777-4cb8-8efa-c1b9eeea3fda?format=auto&w=720&s=37267fa0026033c583469ca44bbe736867a5b1f8'}/>
       <Card title="Bithday cake" expiryDate="12/5/2025" imageUrl={'https://lepetitartichaut.wordpress.com/wp-content/uploads/2012/09/cut-the-cake.jpg'}/>
-      
+
     </View>
   );
 }
