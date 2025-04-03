@@ -8,6 +8,7 @@ import { Ionicons } from '@expo/vector-icons'; // Import Ionicons for icons
 import MapScreen from './screens/MapScreen';
 import PostScreen from './screens/PostScreen';
 import ProfileScreen from './screens/ProfileScreen';
+import CameraScreen from './screens/CameraScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -39,6 +40,7 @@ export default function App() {
         <Tab.Screen name="Home" component={MapScreen} />
         <Tab.Screen name="Post food" component={PostScreen} />
         <Tab.Screen name="Profile" component={ProfileScreen} />
+        <Tab.Screen name="Camera" component={CameraScreen} />
       </Tab.Navigator>
     </NavigationContainer>
   );

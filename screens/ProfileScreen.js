@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, StyleSheet, View, Image, TouchableOpacity } from 'react-native';
+import { Text, StyleSheet, View, Image, Button } from 'react-native';
 import Card from '../components/Card';
 import { Ionicons } from '@expo/vector-icons';
 import Rating from '../components/Rating';
@@ -8,7 +8,7 @@ import Rating from '../components/Rating';
 function ProfileScreen({ navigation }) {
   return (
     <View style={styles.container}>
-      <TouchableOpacity onPress={() => navigation.navigate('Camera')}/>
+      <Button onPress={() => navigation.navigate('Camera')} title="lamsdsal" />
 
       <View style={styles.profileContainer}>
         <Image
