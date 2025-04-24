@@ -4,10 +4,12 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons'; // Import Ionicons for icons
 
-// Import your screens
+// Importing all screens
 import MapScreen from './screens/MapScreen';
 import PostScreen from './screens/PostScreen';
 import ProfileScreen from './screens/ProfileScreen';
+import CameraPostScreen from './screens/CameraPostScreen';
+import LoginScreen from './screens/LoginScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -37,9 +39,10 @@ export default function App() {
         })}
       >
         <Tab.Screen name="Home" component={MapScreen} />
-        <Tab.Screen name="Post food" component={PostScreen} />
+        <Tab.Screen name="Post food" component={CameraPostScreen} />
         <Tab.Screen name="Profile" component={ProfileScreen} />
       </Tab.Navigator>
+
     </NavigationContainer>
   );
 }
