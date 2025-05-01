@@ -1,11 +1,11 @@
 import React from "react";
 import { View, StyleSheet, Pressable, Text } from "react-native";
 
-export default function Knap() {
+export default function Knap({indhold}) {
   return (
     <View style={styles.buttonRow}>
-      <Pressable style={styles.pressableButton} onPress={handleCreatePost}>
-        <Text style={styles.buttonText}>Create post</Text>
+      <Pressable style={styles.pressableButton}>
+        <Text style={styles.buttonText}>{indhold}</Text>
       </Pressable>
     </View>
   );
