@@ -75,6 +75,7 @@ export default function PostScreen({ navigation }) {
       </ScrollView>
 
       {/* Knapper til handling */}
+      {/* Placer "Knap" costum component her */}
       <View style={styles.buttonRow}>
         <Pressable style={styles.pressableButton} onPress={handleCreatePost}>
           <Text style={styles.buttonText}>Create post</Text>
