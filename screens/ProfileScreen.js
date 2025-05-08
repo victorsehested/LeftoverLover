@@ -1,5 +1,12 @@
 import React from "react";
-import { Text, StyleSheet, View, Image, TouchableOpacity } from "react-native";
+import {
+  Text,
+  StyleSheet,
+  View,
+  Image,
+  TouchableOpacity,
+  Button,
+} from "react-native";
 import Card from "../components/Card";
 import { Ionicons } from "@expo/vector-icons";
 import Rating from "../components/Rating";
@@ -34,7 +41,13 @@ function ProfileScreen({ navigation }) {
           "https://lepetitartichaut.wordpress.com/wp-content/uploads/2012/09/cut-the-cake.jpg"
         }
       />
-    {/* styling og function mangler */}
+      {/* styling og function mangler */}
+      <Button
+        title="asdas"
+        onPress={() => {
+          navigation.navigate("LoginScreen");
+        }}
+      />
     </View>
   );
 }
