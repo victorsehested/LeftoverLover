@@ -2,7 +2,9 @@ import { CameraView, CameraType, useCameraPermissions } from 'expo-camera';
 import { useState, useRef } from 'react';
 import { Button, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import * as MediaLibrary from 'expo-media-library';
-import LoginScreen from './LoginScreen';
+import PostScreencreen from './PostScreen';
+import Knap from '../components/Knap'; 
+
 
 
 function CameraPostScreen({ navigation }) {
@@ -49,14 +51,19 @@ function CameraPostScreen({ navigation }) {
     <View style={styles.container}>
       <CameraView style={styles.camera} facing={facing} ref={photoRef}>
         <View style={styles.buttonContainer}>
-          <TouchableOpacity style={styles.button} onPress={toggleCameraFacing}>
+          <TouchableOpacity 
+            style={styles.button} 
+            onPress={toggleCameraFacing}>
             <Text style={styles.text}>Flip Camera</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.button} onPress={() => {
-            navigation.navigate('LoginScreen');
-            handleTakePhoto();
-            }}>
-            <Text style={styles.text} >Take Picture</Text>
+          <TouchableOpacity 
+            style={styles.button} 
+            onPress={() => {
+              navigation.navigate('PostScreen');
+              handleTakePhoto();
+            }}
+          >
+            <Text style={styles.text}>Take Picture</Text>
           </TouchableOpacity>
         </View>
       </CameraView>

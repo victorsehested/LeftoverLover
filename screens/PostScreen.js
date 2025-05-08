@@ -10,6 +10,9 @@ import {
   Pressable,
   Image,
 } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import MapScreen from "./MapScreen";
+
 
 export default function PostScreen({ navigation }) {
   const [expirationDate, setExpirationDate] = useState("");
@@ -74,10 +77,13 @@ export default function PostScreen({ navigation }) {
         </View>
       </ScrollView>
 
-      {/* Knapper til handling */}
-      {/* Placer "Knap" costum component her */}
       <View style={styles.buttonRow}>
-        <Pressable style={styles.pressableButton} onPress={handleCreatePost}>
+        <Pressable 
+        style={styles.pressableButton} 
+        onPress={() => {
+          navigation.navigate("MainTabs", { screen: "Home" }); // Navigate to Home tab
+        }}
+        >
           <Text style={styles.buttonText}>Create post</Text>
         </Pressable>
       </View>

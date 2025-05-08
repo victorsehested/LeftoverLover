@@ -4,7 +4,7 @@ import { View, StyleSheet, Pressable, Text } from "react-native";
 export default function Knap({indhold}) {
   return (
     <View style={styles.buttonRow}>
-      <Pressable style={styles.pressableButton}>
+      <Pressable style={styles.pressableButton} onPress={() => console.log("Button pressed")}>
         <Text style={styles.buttonText}>{indhold}</Text>
       </Pressable>
     </View>
@@ -16,6 +16,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
+    height: 50,
   },
   buttonRow: {
     flexDirection: "row",
