@@ -35,7 +35,6 @@ function ProfileScreen({ navigation }) {
         }
       />
     {/* styling og function mangler */}
-      <Knap indhold="jasbd" />
     </View>
   );
 }

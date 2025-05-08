@@ -1,17 +1,29 @@
-import React from "react";
-import { Button } from "react-native";
+import React from 'react';
+import { View, Text, StyleSheet, Button } from 'react-native';
 
 function LoginScreen({ navigation }) {
   return (
-    <Button>
-      onPress=
-      {() => {
-        title = "Login";
-        navigation.navigate("MapScreen");
-      }}
-      Go somewhere
-    </Button>
+    <View style={styles.container}>
+      <Text style={styles.text}>Welcome to the Login Screen!</Text>
+      <Button
+        title="Go Back"
+        onPress={() => navigation.goBack()} // Navigate back to the previous screen
+      />
+    </View>
   );
 }
 
 export default LoginScreen;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#FFFFFF',
+  },
+  text: {
+    fontSize: 20,
+    fontWeight: 'bold',
+  },
+});
