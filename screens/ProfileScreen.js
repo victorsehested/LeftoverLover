@@ -4,6 +4,7 @@ import Card from "../components/Card";
 import { Ionicons } from "@expo/vector-icons";
 import Rating from "../components/Rating";
 import Knap from "../components/Knap";
+import LoginScreen from "./LoginScreen";
 
 function ProfileScreen({ navigation }) {
   return (
@@ -34,8 +35,13 @@ function ProfileScreen({ navigation }) {
           "https://lepetitartichaut.wordpress.com/wp-content/uploads/2012/09/cut-the-cake.jpg"
         }
       />
-    {/* styling og function mangler */}
-      <Knap indhold="jasbd" />
+      {/* styling og function mangler */}
+      <Knap
+        indhold="jasbd"
+        onpress={() => {
+          navigation.navigate("LoginScreen");
+        }}
+      />
     </View>
   );
 }
