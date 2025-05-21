@@ -28,13 +28,13 @@ function MapScreen({ navigation }) {
     longitudeDelta: 0.01,
   };
 
-  const ITU = {
-    latitude: 55.6600747398742,
-    longitude: 12.590989334477465,
-  };
   const PAPRIKA = {
     latitude: 55.6606334,
     longitude: 12.5898479,
+  };
+  const PALLE = {
+    latitude: 55.6604785,
+    longitude: 12.5939628,
   };
   const ULRIK = {
     latitude: 55.662011,
@@ -55,24 +55,9 @@ function MapScreen({ navigation }) {
         initialRegion={CAPITAL_REGION}
         showsUserLocation={true}
       >
-        <Marker
-          coordinate={ITU}
-          title="ITU"
-          description="International IT University"
-          onPress={() => {
-            Alert.alert(
-              "ITU", // Title of the alert
-              "International IT University", // Message of the alert
-              [
-                { text: "OK", onPress: () => console.log("OK Pressed") }, // Button
-              ]
-            );
-          }}
-        />
+        
 
-        <View style={{ alignItems: "center", justifyContent: "center" }}>
-          <Ionicons name="heart" size={30} color="green" />
-        </View>
+        
 
         <MapMarkers
           coords={ULRIK}
@@ -83,6 +68,11 @@ function MapScreen({ navigation }) {
           coords={PAPRIKA}
           navn="Paprika Solstråle"
           desc="Bananer, Oksekød, Yoghurt"
+        />
+        <MapMarkers
+          coords={PALLE}
+          navn="Palle Plankeværk"
+          desc="Æbler, Pærer, Melon"
         />
       </MapView>
     </View>
