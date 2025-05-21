@@ -5,6 +5,7 @@ import MapView, { Marker } from "react-native-maps";
 import * as Location from "expo-location";
 import { Ionicons } from "@expo/vector-icons";
 import Favicon from "../assets/favicon.png";
+import MapMarkers from "../components/MapMarkers";
 
 function MapScreen({ navigation }) {
   const [errorMsg, setErrorMsg] = useState(null);
@@ -30,10 +31,6 @@ function MapScreen({ navigation }) {
   const ITU = {
     latitude: 55.6600747398742,
     longitude: 12.590989334477465,
-  };
-  const ISMAGERIET = {
-    latitude: 55.66039040484868,
-    longitude: 12.591769568288738,
   };
   const PAPRIKA = {
     latitude: 55.6606334,
@@ -72,37 +69,21 @@ function MapScreen({ navigation }) {
             );
           }}
         />
-        <Marker
-          coordinate={{
-            latitude: ISMAGERIET.latitude,
-            longitude: ISMAGERIET.longitude,
-          }}
-          title="Ismageriet"
-          description="i scream"
-          image={Favicon}
-        >
-          <Image source={Favicon} style={{ width: 10, height: 10 }} />
-        </Marker>
 
-        <Marker
-          coordinate={PAPRIKA}
-          title="Paprika Solstråle"
-          description="Bananer, Oksekød, Yoghurt"
-        >
-          <View style={{ alignItems: "center", justifyContent: "center" }}>
-            <Ionicons name="heart" size={30} color="green" />
-          </View>
-        </Marker>
+        <View style={{ alignItems: "center", justifyContent: "center" }}>
+          <Ionicons name="heart" size={30} color="green" />
+        </View>
 
-        <Marker
-          coordinate={ULRIK}
-          title="Ulrik Wilbek"
-          description="Mælk, Laks, forårsløg"
-        >
-          <View style={{ alignItems: "center", justifyContent: "center" }}>
-            <Ionicons name="heart" size={30} color="green" />
-          </View>
-        </Marker>
+        <MapMarkers
+          coords={ULRIK}
+          navn="Ulrik Wilbek"
+          desc="Mælk, Laks, forårsløg"
+        />
+        <MapMarkers
+          coords={PAPRIKA}
+          navn="Paprika Solstråle"
+          desc="Bananer, Oksekød, Yoghurt"
+        />
       </MapView>
     </View>
   );
