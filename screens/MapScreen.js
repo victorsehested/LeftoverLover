@@ -55,10 +55,7 @@ function MapScreen({ navigation }) {
         initialRegion={CAPITAL_REGION}
         showsUserLocation={true}
       >
-        
-
-        
-
+    
         <MapMarkers
           coords={ULRIK}
           navn="Ulrik Wilbek"
