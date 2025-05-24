@@ -81,7 +81,7 @@ export default function PostScreen({ navigation }) {
         <Pressable 
         style={styles.pressableButton} 
         onPress={() => {
-          navigation.navigate("MainTabs", { screen: "Home" }); // Navigate to Home tab
+          navigation.navigate("MainTabs", { screen: "Home" }); 
         }}
         >
           <Text style={styles.buttonText}>Create post</Text>

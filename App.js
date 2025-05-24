@@ -11,6 +11,12 @@ import PostScreen from './screens/PostScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import CameraPostScreen from './screens/CameraPostScreen';
 import LoginScreen from './screens/LoginScreen';
+//ProductScreens
+import PaprikaProductScreen from './screens/PaprikaProductScreen';
+import PaprikaProductTwoScreen from './screens/PaprikaProductTwoScreen';
+import PalleProductScreen from './screens/PalleProductScreen';
+import UlrikProductScreen from './screens/UlrikProductScreen';
+import LarsProductScreen from './screens/LarsProductScreen';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -47,16 +53,19 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        {/* Main Tab Navigator */}
         <Stack.Screen
           name="MainTabs"
           component={TabNavigator}
-          options={{ headerShown: false }} // hiding the header
+          options={{ headerShown: false }}
         />
-        {/* Additional Screens */}
+        {/* Other SCreens */}
         <Stack.Screen name="PostScreen" component={PostScreen} />
+        <Stack.Screen name="PaprikaProductScreen" component={PaprikaProductScreen} />
+        <Stack.Screen name="PaprikaProductTwoScreen" component={PaprikaProductTwoScreen} />
+        <Stack.Screen name="PalleProductScreen" component={PalleProductScreen} />
+        <Stack.Screen name="UlrikProductScreen" component={UlrikProductScreen} />
+        <Stack.Screen name="LarsProductScreen" component={LarsProductScreen} />
         {/* <Stack.Screen name="MapScreen" component={MapScreen} /> */}
-        
       </Stack.Navigator>
     </NavigationContainer>
   );
