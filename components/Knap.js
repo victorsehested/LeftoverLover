@@ -1,10 +1,20 @@
 import React from "react";
 import { View, StyleSheet, Pressable, Text } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
-export default function Knap({indhold}) {
+export default function Knap({indhold, navigate, NavigateTo, tabParent}) {
+  const navigation = useNavigation();
   return (
     <View style={styles.buttonRow}>
-      <Pressable style={styles.pressableButton} onPress={() => console.log("Button pressed")}>
+      <Pressable style={styles.pressableButton} onPress={() => {
+          if (tabParent) {
+            // Tab navigator
+            navigation.navigate(tabParent, { screen: NavigateTo });
+          } else {
+            // Stack screen
+            navigation.navigate(NavigateTo);
+          }
+        }}>
         <Text style={styles.buttonText}>{indhold}</Text>
       </Pressable>
     </View>

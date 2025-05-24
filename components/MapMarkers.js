@@ -1,14 +1,18 @@
 import React from "react";
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, Pressable } from "react-native";
 import { Marker } from "react-native-maps";
 import { Ionicons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
-export default function MapMarkers({ coords, navn, desc }) {
+export default function MapMarkers({ coords, navn, desc, navigate, NavigateTo, }) {
+  const navigation = useNavigation();
   return (
     <Marker coordinate={ coords } title={ navn } description={ desc }>
-      <View style={styles.pin}>
+      <Pressable style={styles.pin} onPress={() => {
+          navigation.navigate(NavigateTo); 
+        }}>
         <Ionicons name="heart" size={30} color="green" />
-      </View>
+      </Pressable>
     </Marker>
   );
 }

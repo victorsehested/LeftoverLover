@@ -6,6 +6,9 @@ import * as Location from "expo-location";
 import { Ionicons } from "@expo/vector-icons";
 import Favicon from "../assets/favicon.png";
 import MapMarkers from "../components/MapMarkers";
+import { useNavigation } from "@react-navigation/native";
+
+import PaprikaProductScreen from "./PaprikaProductScreen";
 
 function MapScreen({ navigation }) {
   const [errorMsg, setErrorMsg] = useState(null);
@@ -28,7 +31,7 @@ function MapScreen({ navigation }) {
     longitudeDelta: 0.01,
   };
 
-  const PAPRIKA = {
+  const LARS = {
     latitude: 55.6606334,
     longitude: 12.5898479,
   };
@@ -37,8 +40,8 @@ function MapScreen({ navigation }) {
     longitude: 12.5939628,
   };
   const ULRIK = {
-    latitude: 55.662011,
-    longitude: 12.5951199,
+    latitude: 55.6582591,
+    longitude: 12.5906724,
   };
   if (errorMsg) {
     return (
@@ -55,24 +58,24 @@ function MapScreen({ navigation }) {
         initialRegion={CAPITAL_REGION}
         showsUserLocation={true}
       >
-        
-
-        
-
+    
         <MapMarkers
           coords={ULRIK}
           navn="Ulrik Wilbek"
-          desc="Mælk, Laks, forårsløg"
+          desc="Milk & Spring onions"
+          NavigateTo="UlrikProductScreen"
         />
         <MapMarkers
-          coords={PAPRIKA}
-          navn="Paprika Solstråle"
-          desc="Bananer, Oksekød, Yoghurt"
+          coords={LARS}
+          navn="Lars Wahlberg"
+          desc="Beef"
+          NavigateTo="LarsProductScreen"
         />
         <MapMarkers
           coords={PALLE}
           navn="Palle Plankeværk"
-          desc="Æbler, Pærer, Melon"
+          desc="Apple"
+          NavigateTo="PalleProductScreen"
         />
       </MapView>
     </View>

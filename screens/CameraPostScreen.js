@@ -4,7 +4,7 @@ import { Button, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import * as MediaLibrary from 'expo-media-library';
 import PostScreencreen from './PostScreen';
 import Knap from '../components/Knap'; 
-
+import { Ionicons } from '@expo/vector-icons';
 
 
 function CameraPostScreen({ navigation }) {
@@ -49,21 +49,26 @@ function CameraPostScreen({ navigation }) {
 
   return (
     <View style={styles.container}>
+      
       <CameraView style={styles.camera} facing={facing} ref={photoRef}>
+        <Text style={styles.message}>Take a picture of your food</Text>
         <View style={styles.buttonContainer}>
-          <TouchableOpacity 
-            style={styles.button} 
-            onPress={toggleCameraFacing}>
-            <Text style={styles.text}>Flip Camera</Text>
+          <TouchableOpacity
+            style={[styles.button, styles.flipButton]}
+            onPress={toggleCameraFacing}
+          >
+            <Ionicons name="camera-reverse-outline" size={28} color="#fff" />
+            <Text style={styles.text}>Flip</Text>
           </TouchableOpacity>
-          <TouchableOpacity 
-            style={styles.button} 
+          <TouchableOpacity
+            style={[styles.button, styles.captureButton]}
             onPress={() => {
               navigation.navigate('PostScreen');
               handleTakePhoto();
             }}
           >
-            <Text style={styles.text}>Take Picture</Text>
+            <Ionicons name="camera-outline" size={28} color="#fff" />
+            <Text style={styles.text}>Capture</Text>
           </TouchableOpacity>
         </View>
       </CameraView>
@@ -81,6 +86,10 @@ const styles = StyleSheet.create({
   message: {
     textAlign: 'center',
     paddingBottom: 10,
+    color: 'white',
+    fontSize: 20,
+    fontWeight: 'bold',
+    paddingTop: 50,
   },
   camera: {
     flex: 1,

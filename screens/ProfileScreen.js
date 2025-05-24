@@ -1,9 +1,12 @@
 import React from "react";
-import { Text, StyleSheet, View, Image, TouchableOpacity } from "react-native";
+import { Text, StyleSheet, View, Image, TouchableOpacity, Pressable } from "react-native";
 import Card from "../components/Card";
 import { Ionicons } from "@expo/vector-icons";
 import Rating from "../components/Rating";
 import Knap from "../components/Knap";
+import PaprikaProductScreen from "./PaprikaProductScreen";
+import PaprikaProductTwoScreen from "./PaprikaProductTwoScreen";
+
 
 function ProfileScreen({ navigation }) {
   return (
@@ -21,11 +24,12 @@ function ProfileScreen({ navigation }) {
         My Food Posts
       </Text>
       <Card
-        title="Banana"
+        title="12 Bananas"
         expiryDate="6/7/1928"
         imageUrl={
           "https://akamai.vgc.no/v2/images/e43f54e7-7777-4cb8-8efa-c1b9eeea3fda?format=auto&w=720&s=37267fa0026033c583469ca44bbe736867a5b1f8"
         }
+        NavigateTo="PaprikaProductScreen"
       />
       <Card
         title="Bithday cake"
@@ -33,8 +37,9 @@ function ProfileScreen({ navigation }) {
         imageUrl={
           "https://lepetitartichaut.wordpress.com/wp-content/uploads/2012/09/cut-the-cake.jpg"
         }
+        NavigateTo="PaprikaProductTwoScreen"
       />
-    {/* styling og function mangler */}
+    
     </View>
   );
 }
