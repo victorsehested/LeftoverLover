@@ -27,7 +27,8 @@ function TabNavigator() {
       screenOptions={({ route }) => ({
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
-
+          
+          // Define icons based on the route name
           if (route.name === 'Home') {
             iconName = focused ? 'home' : 'home-outline';
           } else if (route.name === 'Post food') {
@@ -42,6 +43,7 @@ function TabNavigator() {
         tabBarInactiveTintColor: 'gray',
       })}
     >
+      
       <Tab.Screen name="Home" component={MapScreen} />
       <Tab.Screen name="Post food" component={CameraPostScreen} />
       <Tab.Screen name="Profile" component={ProfileScreen} />
@@ -65,7 +67,7 @@ export default function App() {
         <Stack.Screen name="PalleProductScreen" component={PalleProductScreen} />
         <Stack.Screen name="UlrikProductScreen" component={UlrikProductScreen} />
         <Stack.Screen name="LarsProductScreen" component={LarsProductScreen} />
-        {/* <Stack.Screen name="MapScreen" component={MapScreen} /> */}
+
       </Stack.Navigator>
     </NavigationContainer>
   );

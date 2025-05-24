@@ -35,7 +35,7 @@ function CameraPostScreen({ navigation }) {
       </View>
     );
   }
-
+  // Change facing of the camera
   function toggleCameraFacing() {
     setFacing(current => (current === 'back' ? 'front' : 'back'));
     console.log('Camera facing:', facing);

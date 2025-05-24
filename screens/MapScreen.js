@@ -13,6 +13,7 @@ import PaprikaProductScreen from "./PaprikaProductScreen";
 function MapScreen({ navigation }) {
   const [errorMsg, setErrorMsg] = useState(null);
 
+  // Requesting location permissions
   useEffect(() => {
     async function handleRequestPermission() {
       let { status } = await Location.requestForegroundPermissionsAsync();
@@ -24,13 +25,14 @@ function MapScreen({ navigation }) {
     handleRequestPermission();
   }, []);
 
+  // Getting the user's current location
   const CAPITAL_REGION = {
     latitude: 55.6600747398742,
     longitude: 12.590989334477465,
     latitudeDelta: 0.01,
     longitudeDelta: 0.01,
   };
-
+  // Coordinates for the various posts
   const LARS = {
     latitude: 55.6606334,
     longitude: 12.5898479,

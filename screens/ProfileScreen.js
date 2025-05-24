@@ -10,6 +10,7 @@ import PaprikaProductTwoScreen from "./PaprikaProductTwoScreen";
 
 function ProfileScreen({ navigation }) {
   return (
+    // Main profile screen with user information and posts
     <View style={styles.container}>
       <View style={styles.profileContainer}>
         <Image
@@ -23,6 +24,8 @@ function ProfileScreen({ navigation }) {
       <Text style={{ fontSize: 16, fontWeight: "bold", marginBottom: 10 }}>
         My Food Posts
       </Text>
+
+      {/* Profiles own posts in a card component */}
       <Card
         title="12 Bananas"
         expiryDate="6/7/1928"
