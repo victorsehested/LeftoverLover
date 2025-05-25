@@ -55,11 +55,6 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen
-          name="MainTabs"
-          component={TabNavigator}
-          options={{ headerShown: false }}
-        />
         {/* Other SCreens */}
         <Stack.Screen name="PostScreen" component={PostScreen} />
         <Stack.Screen name="PaprikaProductScreen" component={PaprikaProductScreen} />
