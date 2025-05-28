@@ -14,7 +14,7 @@ export default function PaprikaProductScreen() {
         <View style={styles.profileInfo}>
           <Text style={styles.profileName}>Paprika Solstråle</Text>
           <Rating rating={4} />
-          <Knap indhold="See profile" />
+          <Knap indhold="See profile" NavigateTo="Profile" tabParent="MainTabs" />
         </View>
       </View>
       <Text style={styles.productTitle}>12 bananas</Text>

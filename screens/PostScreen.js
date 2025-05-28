@@ -12,6 +12,7 @@ import {
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import MapScreen from "./MapScreen";
+import Knap from "../components/Knap";
 
 
 export default function PostScreen({ navigation }) {
@@ -77,16 +78,8 @@ export default function PostScreen({ navigation }) {
         </View>
       </ScrollView>
 
-      <View style={styles.buttonRow}>
-        <Pressable 
-        style={styles.pressableButton} 
-        onPress={() => {
-          navigation.navigate("MainTabs", { screen: "Home" }); 
-        }}
-        >
-          <Text style={styles.buttonText}>Create post</Text>
-        </Pressable>
-      </View>
+
+      <Knap indhold="Create Post" NavigateTo="Home" tabParent="MainTabs"/>
     </SafeAreaView>
   );
 }
